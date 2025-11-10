@@ -3,17 +3,20 @@
 // I DUE NUMERI INDICANO DUE INDICI 
 // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa
 //  tra i due numeri. Non usare i metodi di array di JS 
+const form = document.querySelector(".form");
+const fistInput = document.querySelector(".first");
+const lastInput = document.querySelector(".last");
+const resultText = document.querySelector(".result-text");
+const resultArray = document.querySelector(".result-array");
+const ogArray = document.querySelector(".number-array");
+const desc = document.querySelector(".desc");
 
-const ex = [1, 2, 3, 4, 5, 6, 7];
-const num1 = prompt("inserisci il primo numero");
-const num2 = prompt("inserisci il secondo numero");
-// const newEx = [];
-// for (let i = 0; i < ex.length; i++) {
-//   if (i >= num1 && i < num2) {
-//     newEx.push(ex[i])
-//   }
-// }
-// console.log(newEx);
+const numbers = [];
+const genRandom = () => Math.floor(Math.random() * 10) + 1;
+for (let i = 0; i < 20; i++) {
+  numbers.push(genRandom());
+};
+ogArray.innerHTML = numbers;
 
 const filterByIndex = (array, first, last) => {
   if (last < first) {
@@ -31,4 +34,13 @@ const filterByIndex = (array, first, last) => {
   }
 };
 
-console.log(filterByIndex(ex, num1, num2));
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const firstIndex = parseInt(fistInput.value);
+  const lastIndex = parseInt(lastInput.value);
+  form.classList.add("d-none");
+  const fileteredArray = filterByIndex(numbers, firstIndex, lastIndex);
+  resultArray.innerHTML = fileteredArray;
+  desc.innerHTML = "";
+  resultText.classList.remove("d-none");
+});

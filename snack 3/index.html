@@ -4,8 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snack 3</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>Taglia l'array</h1>
+  <h2>Questo è il tuo array:</h2>
+  <p class="number-array"></p>
+  <p class="desc">scegli la sezione di array da tagliare</p>
+  <form action="submit" class="form">
+    <label for="first">Indice iniziale</label>
+    <input type="number" class="first" name="first">
+    <label for="last">Inice finale</label>
+    <input type="text" class="last" name="last">
+    <button type="submit">Taglia</button>
+  </form>
+  <h2 class="d-none result-text">Ecco il risultato</h2>
+  <p class="result-array"></p>
   <script src="script.js"></script>
 </body>
 </html>
