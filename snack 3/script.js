@@ -17,14 +17,14 @@ const num2 = 5;
 
 const filterByIndex = (array, first, last) => {
   if (last > first) {
-  result = [];
-  for (let i = 0; i < array.length; i++) {
-    if (i >= first && i <= last) result.push(array[i]);
+    result = [];
+    for (let i = first; i <= last; i++) {
+      result.push(array[i]);
+    }
   }
-}
-else {
-  alert("il primo numero deve essere inferiore al secondo");
-}
+  else {
+    alert("il primo numero deve essere inferiore al secondo");
+  }
   return result
 };
 
