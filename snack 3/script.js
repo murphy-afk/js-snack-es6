@@ -5,8 +5,8 @@
 //  tra i due numeri. Non usare i metodi di array di JS 
 
 const ex = [1, 2, 3, 4, 5, 6, 7];
-const num1 = 2;
-const num2 = 5;
+const num1 = prompt("inserisci il primo numero");
+const num2 = prompt("inserisci il secondo numero");
 // const newEx = [];
 // for (let i = 0; i < ex.length; i++) {
 //   if (i >= num1 && i < num2) {
@@ -16,16 +16,19 @@ const num2 = 5;
 // console.log(newEx);
 
 const filterByIndex = (array, first, last) => {
-  if (last > first) {
+  if (last < first) {
+    alert("il primo numero deve essere inferiore al secondo");
+  }
+  else if (last > array.length) {
+    alert(`il secondo numero deve essere inferiore a ${array.length}`);
+  }
+  else {
     result = [];
     for (let i = first; i <= last; i++) {
       result.push(array[i]);
     }
+    return result
   }
-  else {
-    alert("il primo numero deve essere inferiore al secondo");
-  }
-  return result
 };
 
 console.log(filterByIndex(ex, num1, num2));

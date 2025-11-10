@@ -27,4 +27,3 @@ for (let i = 0; i < teams.length; i++) {
   teamsFouls.push({ name: teams[i].name, fouls: teams[i].fouls });
 }
 console.log(teamsFouls);
-
