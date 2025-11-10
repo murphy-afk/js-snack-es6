@@ -21,4 +21,10 @@ for (let i = 0; i < teams.length; i++) {
   teams[i].goals = genRandom();
   teams[i].fouls = genRandom();
 }
-console.log(teams);
+const teamsFouls = [];
+
+for (let i = 0; i < teams.length; i++) {
+  teamsFouls.push({ name: teams[i].name, fouls: teams[i].fouls });
+}
+console.log(teamsFouls);
+
