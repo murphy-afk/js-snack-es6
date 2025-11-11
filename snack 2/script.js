@@ -6,6 +6,8 @@
 // Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti
 //  e stampiamo tutto in console.
 
+const genRandom = () => Math.floor(Math.random() * 10) + 1;
+
 const teams = [
   { name: "Milan", goals: 0, fouls: 0 },
   { name: "Inter", goals: 0, fouls: 0 },
@@ -15,15 +17,11 @@ const teams = [
   { name: "Juventus", goals: 0, fouls: 0 }
 ];
 
-const genRandom = () => Math.floor(Math.random() * 10) + 1;
-
+const teamsFouls = [];
 for (let i = 0; i < teams.length; i++) {
   teams[i].goals = genRandom();
   teams[i].fouls = genRandom();
-}
-const teamsFouls = [];
-
-for (let i = 0; i < teams.length; i++) {
   teamsFouls.push({ name: teams[i].name, fouls: teams[i].fouls });
 }
+
 console.log(teamsFouls);
